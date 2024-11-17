@@ -10,11 +10,21 @@
         <p>Heads or Tails?</p>
 
         <button onclick="
-            let computerMove = Math.random();
-            const guess = 'heads';
-            let result = computerMove <= 0.5 ? 'Heads' : 'Tails';
-            alert(`Coin Flipped: ${result}`);
-        ">Flip the coin</button>
+            coinFlip('Heads')
+        ">Heads</button>
+
+        <button onclick="
+            coinFlip('Tails')
+        ">Tails</button>
+
+<!------------------- Fix Reset Button, question 8k ------------------------------>
+        <button onclick="
+            tally.wins = 0;
+            tally.losses = 0;
+
+            // reset the tally in local storage
+            localStorage.removeItem('tally');
+        ">Reset Score</button>
     </main>
 
     <script src="coinFlip.js"></script>
